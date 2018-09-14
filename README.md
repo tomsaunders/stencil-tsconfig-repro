@@ -11,7 +11,7 @@ This reproduces stencil bug https://github.com/ionic-team/stencil/issues/1062
 
 ### In my-app
 
-1. `npm install`
+1. `npm ci` (I've been seeing some weirdness with npm install after referencing a local module, ci seems more successful)
 2. `npm start`
 
 ## Problems Observed
