@@ -39,3 +39,23 @@ This reproduces stencil bug https://github.com/ionic-team/stencil/issues/1104 'P
 [34:59.9]  dev server: http://localhost:3333/
 
 ```
+
+## mycomponent.core.js
+
+This line reference is only for the non-minified code.
+
+Lines 250-261:
+```
+  var promises = [];
+  window.customElements && (!window.Element || window.Element.prototype.closest && window.Element.prototype.matches && window.Element.prototype.remove) || promises.push(import('./polyfills/dom.js'));
+  'function' === typeof Object.assign && Object.entries || promises.push(import('./polyfills/object.js'));
+  Array.prototype.find && Array.prototype.includes || promises.push(import('./polyfills/array.js'));
+  String.prototype.startsWith && String.prototype.endsWith || promises.push(import('./polyfills/string.js'));
+  window.fetch || promises.push(import('./polyfills/fetch.js'));
+  Promise.all(promises).then(function(results) {
+    results.forEach(function(polyfillModule) {
+      polyfillModule.applyPolyfill(window, window.document);
+    });
+    cb();
+  });
+```
