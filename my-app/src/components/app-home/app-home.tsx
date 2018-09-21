@@ -1,13 +1,16 @@
 import { Component } from "@stencil/core";
 import "my-component";
-import { RandomCat } from "my-component";
+import { ExampleClass } from "my-component";
 
 @Component({
   tag: "app-home",
   styleUrl: "app-home.scss"
 })
 export class AppHome {
-  public cat: RandomCat;
+  public willLoad(): void {
+    const dummy = new ExampleClass("aragorn", "legolas", "gimli");
+    console.log(dummy);
+  }
 
   render() {
     return (

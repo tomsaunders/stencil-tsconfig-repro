@@ -12,5 +12,7 @@ export const config: Config = {
       type: "www",
       serviceWorker: null
     }
-  ]
+  ],
+  devMode: true,
+  enableCache: false
 };

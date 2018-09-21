@@ -1,6 +1,6 @@
 import { Component, Prop } from "@stencil/core";
 
-import { RandomCat } from "model/random-cat";
+import { RandomCat } from "../../model/random-cat";
 
 @Component({
   tag: "my-cat",

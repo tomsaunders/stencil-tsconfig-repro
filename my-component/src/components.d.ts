@@ -9,7 +9,7 @@ import '@stencil/core';
 
 import {
   RandomCat,
-} from 'model/random-cat';
+} from './model/random-cat';
 
 
 declare global {
